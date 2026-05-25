@@ -55,18 +55,8 @@ users = [
   }
 ]
 
-import pandas as pd
 import openai
 from openai import OpenAI
-
-# df = pd.read_csv('SDW2023.csv')
-# user_ids = df['UserID'].tolist()
-
-# print(user_ids)
-
-
-
-
 
 sdw_openai_api = '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'
 
@@ -92,8 +82,6 @@ def generate_ai_news(user):
 
     except Exception as e:
         print(f"Erro na API: {e}")
-
-        # mensagem fallback
         return f"{user['name']}, investir hoje é construir um futuro mais seguro!"
 
 for user in users:
@@ -103,8 +91,5 @@ for user in users:
         "icon": "https://digitalinnovationone.github.io/santander-dev-week-2023-api/icons/credit.svg",
         "description": news
     })
-
-
-
-
+  
 print(users)
